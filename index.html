@@ -1,10 +1,78 @@
-<!Doctype html>
+<!Doctype HTML>
 <html>
   <head>
-    <title>BrightU 2.0</title>
+    <title>BrightU 2.0 * A-Frame</title>
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
+     <a-scene>
+         <!-- Notes Section -->
+         <!-- 
+            To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting 
+
+
+         <!-- Camera -->
+        <a-entity position="0 1 5">
+            <a-camera></a-camera>
+        </a-entity>
+         
+         
+         <!-- 'Bright House Networks' Text -->
+         
+         
+         <!-- Bright House Rings -->
+         <!-- Outer Layer -->
+         <a-entity position="0 10 -10">
+             
+         </a-entity>
+         
+         <a-entity position="0 10 -10" >
+             <!-- Inner Circle -->
+            <a-torus color="#FFB300"  
+                  segments-radial="100"
+                  segments-tubular="200" 
+                  radius="1"
+                  radius-tubular="0.1">
+            </a-torus>
+             <!-- Outer Circle -->
+            <a-torus color="#FFB300" 
+                  segments-radial="100" 
+                  segments-tubular="200" 
+                  radius="2"
+                  radius-tubular="0.1">
+            </a-torus>
+             
+            <!-- Bottom left ring -->
+            <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 120"
+                    material="side: double; color: #FFB300"
+                    rotation="90 180 0"
+                    position="-1.5 -1 0">
+            </a-entity>
+            <!-- Bottom right ring -->
+            <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 120"
+                    material="side: double; color: #FFB300"
+                    rotation="90 180 0"
+                    position="">
+            </a-entity>
+             <!-- Top left ring -->
+             
+             <!-- Top right ring -->
+         </a-entity>
+         
+         <!-- Sample entity for testing (green torus) -->
+         <a-entity geometry="primitive: torus; radius: 1; width: 10"
+                   rotation="0 20 0"
+                   material="side: double; opacity: 1; color: green">     
+        </a-entity>
+         
+         <a-box color="#6173F4" width="4" height="10" depth="2"
+         position="10 2 -5" rotation="0 0 45" scale="2 0.5 3"></a-box>
+         
+         
+        <!-- Floor & Sky -->
+        <a-plane rotation="-90 10 0" width="50" height="50" color="grey"></a-plane>
+        <a-sky color="#19237E"></a-sky>
+    </a-scene>
   </body>
-</html>
+</html> 
