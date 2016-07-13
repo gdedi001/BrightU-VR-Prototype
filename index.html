@@ -9,18 +9,19 @@
      <a-scene editor>
          <!-- Notes Section -->
          <!-- 
-            To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting 
+            To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting -->
 
-         <!-- TODO: implement assets and mappings for necessary images -->
+         <!-- Asset management system -->
          <a-assets>
-            <!-- Assets go here -->
+            <img id="floor" src="img/wood.jpg">
+             <img id="brightU" src="img/BrightU_Logo.png">
          </a-assets>
          
          <!-- 'Bright House Networks' Text -->
          
          
          <!-- Bright House Logo -->
-         <a-entity id="brightHouse" position="0 2.5 -5" >
+         <a-entity id="brightHouse" position="0 2.5 -5" scale=".50 .50 .50">
              <!-- Inner Circle -->
             <a-torus color="#FFB300"  
                   segments-radial="100"
@@ -64,16 +65,37 @@
             </a-entity>
          </a-entity>
          
+        <!-- BrightU Logo -->
+        <a-curvedimage id="brightU"
+                src="#brightU"
+                height="3.0"
+                radius="5.7"
+                theta-length="72"
+                rotation="0 -32.76 0"
+                position="2.21 3.40 8.00"
+                scale="0.8 0.8 0.8">
+        </a-curvedimage> 
          
-        <!-- Floor & Sky -->
+         
+        <!-- Floor -->
         <a-entity id="floor" 
                 geometry="primitive: cylinder; height: .2; radius: 12"
-                material="src: #floorImg; color: green; metalness: .2; repeat: 50 20; roughness: .1">
+                material="src: #floor; metalness: .2; repeat: 50 20; roughness: .1">
         </a-entity>
-        <a-sky color="#19237E"></a-sky>
+         
+         <!-- Sky -->
+        <a-sky id="sky" 
+               color="#e6e6e6">
+        </a-sky>
+         
+         <!-- Lights.
+        <a-entity id="pointLight" 
+                  light="type: point" 
+                  position="0 3 3">
+        </a-entity>-->
         
          <!-- Camera -->
-        <a-entity id="camera" position="1 1 5">
+        <a-entity id="cameraWrapper" position="1 1 5">
             <a-camera></a-camera>
         </a-entity>
     </a-scene>
