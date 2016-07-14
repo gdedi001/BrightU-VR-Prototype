@@ -20,72 +20,88 @@
          <!-- 'Bright House Networks' Text -->
          
          
-         <!-- Bright House Logo -->
-         <a-entity id="brightHouse" position="0 2.5 -5" scale=".50 .50 .50">
+        <!-- Bright House Logo -->
+        <a-entity id="brightHouse" position="0 2.15 -5" scale=".50 .50 .50">
+             <!-- Background blue -->
+            <a-entity id="backgroundBHN"
+                geometry="primitive: circle; depth: 1.00; height: 1.00; width: 1.00"
+                material="color: #19237E"
+                position="0.00 0.00 0.00"
+                scale="3.00 3.00 0.00">
+            </a-entity>
              <!-- Inner Circle -->
-            <a-torus color="#FFB300"  
-                  segments-radial="100"
-                  segments-tubular="200" 
-                  radius="1"
-                  radius-tubular="0.1">
+            <a-torus id="innerRing"
+                color="#FFB300"  
+                segments-radial="100"
+                segments-tubular="200" 
+                radius="1"
+                radius-tubular="0.1">
             </a-torus>
              <!-- Outer Circle -->
-            <a-torus color="#FFB300" 
-                  segments-radial="100" 
-                  segments-tubular="200" 
-                  radius="2"
-                  radius-tubular="0.1">
+            <a-torus id="outerRing"
+                color="#FFB300" 
+                segments-radial="100" 
+                segments-tubular="200" 
+                radius="2"
+                radius-tubular="0.1">
             </a-torus>
-             
-            <!-- Bottom left ring -->
-            <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
+            <a-entity id="outerShell">
+                 <!-- Bottom left ring -->
+                <a-entity id="btmLeft"
+                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
                     material="side: double; color: #FFB300"
                     rotation="90 180 0"
-                    position="-1.5 -1 0">
-            </a-entity>
-            <!-- Bottom right ring -->
-            <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
+                    position="-0.90 -0.88 0"
+                    scale="1.30 .54 1.40">
+                </a-entity>
+                <!-- Bottom right ring -->
+                <a-entity id="btmRight"
+                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
                     material="side: double; color: #FFB300"
                     rotation="90 360 0"
-                    position="1.5 -1 0">
-            </a-entity>
-             <!-- Top right ring -->
-             <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
+                    position="0.90 -0.88 0"
+                    scale="1.30 .54 1.40">
+                </a-entity>
+                 <!-- Top right ring -->
+                 <a-entity id="topRight"
+                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
                     material="side: double; color: #FFB300"
                     rotation="-90 360 0"
                     position="0.90 .88 0"
                     scale="1.30 .54 1.40">
-            </a-entity>
-             <!-- Top left ring -->
-             <a-entity geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
+                </a-entity>
+                 <!-- Top left ring -->
+                 <a-entity id="topLeft"
+                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
                     material="side: double; color: #FFB300"
                     rotation="-90 -180 0"
                     position="-0.90 .88 0"
                     scale="1.30 .54 1.40">
+                </a-entity>
             </a-entity>
          </a-entity>
          
-        <!-- BrightU Logo -->
+         <!-- BrightU Logo -->
         <a-curvedimage id="brightU"
-                src="#brightU"
-                height="3.0"
-                radius="5.7"
-                theta-length="72"
-                rotation="0 -32.76 0"
-                position="2.21 3.40 8.00"
-                scale="0.8 0.8 0.8">
+            src="#brightU"
+            height="3.0"
+            radius="5.7"
+            theta-length="72"
+            rotation="0 -220 0"
+            position="-0.08 11.90 2.28"
+            scale="2.74 2.74 2.82">
         </a-curvedimage> 
          
          
         <!-- Floor -->
         <a-entity id="floor" 
-                geometry="primitive: cylinder; height: .2; radius: 12"
-                material="src: #floor; metalness: .2; repeat: 50 20; roughness: .1">
+            geometry="primitive: cylinder; height: .2; radius: 12"
+            material="src: #floor; metalness: .2; repeat: 50 20; roughness: .1">
         </a-entity>
          
          <!-- Sky -->
         <a-sky id="sky" 
-               color="#e6e6e6">
+            color="#e6e6e6">
         </a-sky>
          
          <!-- Lights.
@@ -95,9 +111,16 @@
         </a-entity>-->
         
          <!-- Camera -->
-        <a-entity id="cameraWrapper" position="1 1 5">
-            <a-camera></a-camera>
-        </a-entity>
+        <a-entity id="cameraWrapper" position="-0.04 1 5">
+            <a-entity id="camera" camera look-controls wasd-controls>
+                <!-- Cursor. -->
+                <a-entity id="cursor" position="0 0 -2"
+                    geometry="primitive: ring; radiusOuter: 0.020; radiusInner: 0.01"
+                    material="color: black; shader: flat; transparent: true; opacity: 0.6"
+                    scale="2 2 2" raycaster>
+                </a-entity>
+            </a-entity>
+       </a-entity>
     </a-scene>
     <script src="js/aframe-editor.js"></script>
   </body>
