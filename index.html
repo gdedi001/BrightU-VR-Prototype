@@ -6,16 +6,18 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor stats>
+     <a-scene editor>
          <!-- Notes Section -->
          <!-- 
             To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting -->
 
          <!-- Asset management system -->
          <a-assets>
-            <img id="floor" src="img/wood.jpg">
-            <img id="brightU" src="img/BrightU_Logo.png">
-            <img id="sky" src="img/nanotube.jpg">
+             <img id="floor" src="img/wood.jpg">
+             <img id="brightU" src="img/BrightU_Logo.png">
+             <img id="sky" src="img/nanotube.jpg">
+             <img id="internet" src="img/internet.png">
+             <img id="security" src="img/securityartwork.png">
          </a-assets>
          
          <!-- 'Bright House Networks' Text -->
@@ -103,7 +105,7 @@
          
          <!-- Sky -->
         <a-sky id="sky" 
-            src="#sky">
+            color="white">
         </a-sky>
          
          <!-- Lights 
