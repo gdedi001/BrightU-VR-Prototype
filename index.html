@@ -1,12 +1,12 @@
 <!Doctype HTML>
 <html>
   <head>
-    <title>BrightU 2.0 : A-Frame</title>
+    <title>BrightU 2.0 - A-Frame</title>
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor>
+     <a-scene editor stats>
          <!-- Notes Section -->
          <!-- 
             To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting -->
@@ -14,7 +14,8 @@
          <!-- Asset management system -->
          <a-assets>
             <img id="floor" src="img/wood.jpg">
-             <img id="brightU" src="img/BrightU_Logo.png">
+            <img id="brightU" src="img/BrightU_Logo.png">
+            <img id="sky" src="img/nanotube.jpg">
          </a-assets>
          
          <!-- 'Bright House Networks' Text -->
@@ -26,7 +27,7 @@
             <a-entity id="backgroundBHN"
                 geometry="primitive: circle; depth: 1.00; height: 1.00; width: 1.00"
                 material="color: #19237E"
-                position="0.00 0.00 0.00"
+                position="0.00 0.10 -0.85"
                 scale="3.00 3.00 0.00">
             </a-entity>
              <!-- Inner Circle -->
@@ -46,6 +47,7 @@
                 radius-tubular="0.1">
             </a-torus>
             <a-entity id="outerShell">
+                <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="7000"></a-animation>
                  <!-- Bottom left ring -->
                 <a-entity id="btmLeft"
                     geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
@@ -96,28 +98,28 @@
         <!-- Floor -->
         <a-entity id="floor" 
             geometry="primitive: cylinder; height: .2; radius: 12"
-            material="src: #floor; metalness: .2; repeat: 50 20; roughness: .1">
+            material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
          
          <!-- Sky -->
         <a-sky id="sky" 
-            color="#e6e6e6">
+            src="#sky">
         </a-sky>
          
-         <!-- Lights.
+         <!-- Lights 
         <a-entity id="pointLight" 
-                  light="type: point" 
+                  light="type: ambient" 
                   position="0 3 3">
-        </a-entity>-->
+        </a-entity> -->
         
          <!-- Camera -->
-        <a-entity id="cameraWrapper" position="-0.04 1 5">
+        <a-entity id="cameraWrapper" position="-0.04 1.2 5">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor. -->
-                <a-entity id="cursor" position="0 0 -2"
-                    geometry="primitive: ring; radiusOuter: 0.020; radiusInner: 0.01"
+                <a-entity id="cursor" position="0 0 -1"
+                    geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
                     material="color: black; shader: flat; transparent: true; opacity: 0.6"
-                    scale="2 2 2" raycaster>
+                    scale="1.5 1.5 1.5" raycaster>
                 </a-entity>
             </a-entity>
        </a-entity>
