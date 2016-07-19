@@ -3,6 +3,7 @@
   <head>
     <title>BrightU 2.0 - A-Frame</title>
     <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
@@ -18,10 +19,11 @@
              <img id="sky" src="img/nanotube.jpg">
              <img id="internet" src="img/internet.png">
              <img id="security" src="img/securityartwork.png">
+             <a-asset-item id="door" src="models/door/model.dae"/>
+             <!-- TODO: Fix audio -->
+             <audio id="welcome" src="sounds/welcome.ogg"/>
          </a-assets>
-         
-         <!-- 'Bright House Networks' Text -->
-         
+                  
          
         <!-- Bright House Logo -->
         <a-entity id="brightHouse" position="0 2.15 -5" scale=".50 .50 .50">
@@ -86,8 +88,7 @@
          </a-entity>
          
          <!-- BrightU Logo -->
-        <a-curvedimage id="brightU"
-            src="#brightU"
+        <a-curvedimage id="brightU" src="#brightU"
             height="3.0"
             radius="5.7"
             theta-length="72"
@@ -96,6 +97,27 @@
             scale="2.74 2.74 2.82">
         </a-curvedimage> 
          
+        <!-- Enterprise/SMB Logos -->
+         <!-- Internet -->
+        <a-curvedimage id="internet" src="#internet"
+            height="3.0"
+            radius="1.0"
+            theta-start="180"
+            theta-length="145"
+            rotation="0.00 -35.88 0.00"
+            position="-4.84 2.10 -3.38"
+            scale="1.58 1.02 1.42">
+        </a-curvedimage>
+         <!-- Security -->
+        <a-curvedimage id="security" src="#security"
+            height="3.0"
+            radius="1.0"
+            theta-start="180"
+            theta-length="145"
+            rotation="0.00 -95.88 0.00"
+            position="4.84 2.10 -3.38"
+            scale="1.58 1.02 1.42">
+        </a-curvedimage>
          
         <!-- Floor -->
         <a-entity id="floor" 
@@ -103,16 +125,18 @@
             material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
          
+        <!-- Door -->
+        <a-collada-model id="door" src="#door"
+            rotation="0.00 90.00 0.00"
+            position="1.20 0.00 12.50">
+        </a-collada-model>
+         
          <!-- Sky -->
         <a-sky id="sky" 
             color="white">
         </a-sky>
          
-         <!-- Lights 
-        <a-entity id="pointLight" 
-                  light="type: ambient" 
-                  position="0 3 3">
-        </a-entity> -->
+        <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
         
          <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.2 5">
