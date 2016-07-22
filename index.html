@@ -128,7 +128,7 @@
         <!-- Door -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
-            position="1.20 0.00 12.50">
+            position="1.20 0.16 13.56">
         </a-collada-model>
          
          <!-- Sky -->
@@ -141,15 +141,26 @@
          <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.2 5">
             <a-entity id="camera" camera look-controls wasd-controls>
-                <!-- Cursor. -->
-                <a-entity id="cursor" position="0 0 -1"
+                <!-- Cursor -->
+                <a-entity cursor="fuse: true; maxDistance: 300; timeout: 500" id="cursor" position="0 0 -1"
                     geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
                     material="color: black; shader: flat; transparent: true; opacity: 0.6"
                     scale="1.5 1.5 1.5" raycaster>
                 </a-entity>
             </a-entity>
        </a-entity>
+       <!-- 
+        <a-entity camera position="-0.04 1.20 5.00">
+            <a-entity cursor="maxDistance: 30; timeout: 500"
+                      position="-0.04 1.20 5.00"
+                      geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
+                      material="color: black; shader: flat; opacity: 0.6"
+                      scale="1.50 1.50 1.50">
+            </a-entity>
+        </a-entity>
+      -->
     </a-scene>
     <script src="js/aframe-editor.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html> 
