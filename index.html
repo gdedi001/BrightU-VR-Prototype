@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor>
+     <a-scene editor stats>
          <!-- Notes Section -->
          <!-- 
             To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting -->
@@ -19,6 +19,9 @@
              <img id="sky" src="img/nanotube.jpg">
              <img id="internet" src="img/internet.png">
              <img id="security" src="img/securityartwork.png">
+             <img id="firewall" src="img/fire-icon.png">
+             <img id="cloud" src="img/cloud-icon.png">
+             <img id="elevator" src="img/elevator.jpg">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <!-- TODO: Fix audio -->
              <audio id="welcome" src="sounds/welcome.ogg"/>
@@ -85,6 +88,10 @@
                     scale="1.30 .54 1.40">
                 </a-entity>
             </a-entity>
+<!--
+            <a-event name="mouseenter" position="0.00 2.15 -2.0"></a-event>
+            <a-event name="mouseleave" position="0 2.15 -5"></a-event>
+-->
          </a-entity>
          
          <!-- BrightU Logo -->
@@ -98,6 +105,16 @@
         </a-curvedimage> 
          
         <!-- Enterprise/SMB Logos -->
+         <!-- Cloud -->
+        <a-curvedimage id="cloud" src="#cloud"
+            height="3.0"
+            radius="1.0"
+            theta-start="180"
+            theta-length="145"
+            rotation="0.00 -17.32 1.60"
+            position="-6.93 2.10 1.26"
+            scale="1.58 1.02 1.42">
+        </a-curvedimage>
          <!-- Internet -->
         <a-curvedimage id="internet" src="#internet"
             height="3.0"
@@ -105,9 +122,17 @@
             theta-start="180"
             theta-length="145"
             rotation="0.00 -35.88 0.00"
-            position="-4.84 2.10 -3.38"
-            scale="1.58 1.02 1.42">
+            position="-3.89 2.10 -3.38"
+            scale="1.58 1.02 1.42"
+            openEnded="false">
         </a-curvedimage>
+<!--
+         <a-image id="internet" src="#internet" 
+            width="3"
+            height="2"
+            position="-4.84 2.10 -3.38">
+         </a-image>
+-->
          <!-- Security -->
         <a-curvedimage id="security" src="#security"
             height="3.0"
@@ -115,10 +140,20 @@
             theta-start="180"
             theta-length="145"
             rotation="0.00 -95.88 0.00"
-            position="4.84 2.10 -3.38"
+            position="3.89 2.10 -3.38"
             scale="1.58 1.02 1.42">
         </a-curvedimage>
-         
+         <!-- Firewall -->
+        <a-curvedimage id="firewall" src="#firewall"
+            height="3.0"
+            radius="1.0"
+            theta-start="180"
+            theta-length="145"
+            rotation="0.00 -138.82 0.00"
+            position="6.93 2.10 1.26"
+            scale="1.58 1.02 1.42">
+        </a-curvedimage>
+                  
         <!-- Floor -->
         <a-entity id="floor" 
             geometry="primitive: cylinder; height: .2; radius: 12"
@@ -131,6 +166,14 @@
             position="1.20 0.16 13.56">
         </a-collada-model>
          
+        <!-- Elevator 
+        <a-curvedimage id="elevator" src="#elevator"
+            theta-length="360"
+            height="4"
+            position="-0.04 -2.00 5.00">
+        </a-curvedimage>
+        -->
+         
          <!-- Sky -->
         <a-sky id="sky" 
             color="white">
@@ -142,10 +185,22 @@
         <a-entity id="cameraWrapper" position="-0.04 1.2 5">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
-                <a-entity cursor="fuse: true; maxDistance: 300; timeout: 500" id="cursor" position="0 0 -1"
+                <a-entity id="cursor"
+                    cursor="fuse: true; maxDistance: 300; timeout: 500"
+                    position="0 0 -1"
                     geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
-                    material="color: black; shader: flat; transparent: true; opacity: 0.6"
-                    scale="1.5 1.5 1.5" raycaster>
+                    material="color: red; shader: flat; transparent: true; opacity: 0.6"
+                    scale="1.5 1.5 1.5">
+                    
+                    <!-- Visual Feedback for cursor 
+                    <a-animation begin="click" easing="ease-in" attribute="scale"
+                                 fill="backwards" from="2.1 2.1 2.1" to="1 1 1" dur="150">
+                    </a-animation>
+                    <a-animation begin="fusing" easing="ease-in" attribute="scale"
+                                fill="forwards" from="1 1 1" to="2.1 2.1 2.1" dur="1500x">
+                    </a-animation>
+                    -->
+                    
                 </a-entity>
             </a-entity>
        </a-entity>
