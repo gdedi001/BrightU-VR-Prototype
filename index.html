@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor stats>
+     <a-scene editor >
          <!-- Asset management system -->
          <a-assets>
              <img id="floor" src="img/wood.jpg">
@@ -90,6 +90,7 @@
                     height="0.00"
                     radius="2.10"
                     rotation="0.00 0.00 0.00"
+                    position="0.00 -4.03 0.00"
                     material="opacity: .30; color: black">
             </a-cylinder>
             
@@ -111,56 +112,88 @@
          
         <!-- Enterprise/SMB Logos -->
          <!-- Cloud -->
-        <a-entity id="cloud">
+        <a-entity id="cloud" position="-6.93 2.10 1.26">
             <a-curvedimage src="#cloud"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -17.32 1.60"
-                position="-6.93 2.10 1.26"
                 scale="1.58 1.02 1.42">
             </a-curvedimage> 
+            <!-- Shadow -->
+            <a-cylinder id="cloudShadow" 
+                width="4.5" 
+                height="0.00"
+                radius="1.00"
+                rotation="0.00 0.00 0.00"
+                position="-0.86 -1.95 -0.54"
+                material="opacity: .30; color: black">
+            </a-cylinder>
         </a-entity>
         
          <!-- Internet -->
-        <a-entity id="internet">
+        <a-entity id="internet" position="-3.89 2.10 -3.38">
             <a-curvedimage src="#internet"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -35.88 0.00"
-                position="-3.89 2.10 -3.38"
                 scale="1.58 1.02 1.42"
                 openEnded="false">
             </a-curvedimage>
+            <!-- Shadow -->
+            <a-cylinder id="internetShadow" 
+                width="4.5" 
+                height="0.00"
+                radius="1.00"
+                rotation="0.00 0.00 0.00"
+                position="-0.73 -1.95 -0.98"
+                material="opacity: .30; color: black">
+            </a-cylinder>
         </a-entity>
         
          <!-- Security -->
-        <a-entity id="security">
+        <a-entity id="security" position="3.89 2.10 -3.38">
             <a-curvedimage src="#security"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -95.88 0.00"
-                position="3.89 2.10 -3.38"
                 scale="1.58 1.02 1.42">
             </a-curvedimage>
+            <!-- Shadow -->
+            <a-cylinder id="secShadow" 
+                width="4.5" 
+                height="0.00"
+                radius="1.00"
+                rotation="0.00 0.00 0.00"
+                position="0.33 -1.95 -1.00"
+                material="opacity: .30; color: black">
+            </a-cylinder>
         </a-entity>
  
          <!-- Firewall -->
-        <a-entity id="firewall">
+        <a-entity id="firewall" position="6.93 2.10 1.26">
             <a-curvedimage src="#firewall"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -138.82 0.00"
-                position="6.93 2.10 1.26"
                 scale="1.58 1.02 1.42">
-            </a-curvedimage> 
+            </a-curvedimage>
+            <!-- Shadow -->
+            <a-cylinder id="fireShadow" 
+                width="4.5" 
+                height="0.00"
+                radius="1.00"
+                rotation="0.00 0.00 0.00"
+                position="1.04 -1.95 -0.51"
+                material="opacity: .30; color: black">
+            </a-cylinder>
         </a-entity>
         
                   
@@ -185,9 +218,7 @@
         -->
          
          <!-- Sky -->
-        <a-sky id="sky" 
-            color="white">
-        </a-sky>
+        <a-sky id="sky" color="white"></a-sky>
          
         <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
         
