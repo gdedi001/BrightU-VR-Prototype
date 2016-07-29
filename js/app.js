@@ -1,22 +1,23 @@
 'use strict';
+var brightHouse = document.querySelector("#brightHouse"),
+    cloud = document.querySelector("#cloudHolder"),
+    internet = document.querySelector("#internetHolder"),
+    security = document.querySelector("#securityHolder"),
+    firewall = document.querySelector("#firewallHolder");
 
-//document.querySelector('#backgroundBHN').addEventListener('click', function(){
-//    this.setAttribute('material', 'color', 'red');
+//document.querySelector('#cloudShadow').addEventListener('click', function(){
+//    this.setAttribute('position', '0.00 5.00 -5.00');
+//    console.log('test complete');
 //});
-//
-//document.querySelector('#security').addEventListener('click', function(){
-//    
+
+
+// Trigger Cloud Server model to appear
+cloud.addEventListener('click', function(){
+    document.querySelector('#pull').emit('test');
+    console.log('testing!');
+});
+
+// Trigger an event to begin fading.
+//documet.querySelector('#test').addEventListener('click', function(){
+//    document.querySelector('#fading-cube').emit('fade');
 //});
-
-var brightHouse = document.getElementById("brightHouse"),
-    cloud = document.getElementById("cloud"),
-    internet = document.getElementById("internet"),
-    security = document.getElementById("security"),
-    firewall = document.getElementById("firewall");
-
-
-brightHouse.onclick = function(){
-    //this.setAttribute('position', '0.00 5.00 -5//');
-};
-
-
