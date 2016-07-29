@@ -25,7 +25,7 @@
                   
          
         <!-- Bright House Logo -->
-        <a-entity id="brightHouse" position="0 2.15 -5" scale=".50 .50 .50">
+        <a-entity id="brightHouse" position="0 2.15 -3.53" scale=".50 .50 .50">
              <!-- Background blue -->
             <a-entity id="backgroundBHN"
                 geometry="primitive: circle; depth: 1.00; height: 1.00; width: 1.00"
@@ -133,7 +133,7 @@
         </a-entity>
         
          <!-- Internet -->
-        <a-entity id="internetHolder" position="-3.89 2.10 -3.38">
+        <a-entity id="internetHolder" position="-3.89 2.10 -1.44">
             <a-curvedimage id="internet" src="#internet"
                 height="3.0"
                 radius="1.0"
@@ -155,7 +155,7 @@
         </a-entity>
         
          <!-- Security -->
-        <a-entity id="securityHolder" position="3.89 2.10 -3.38">
+        <a-entity id="securityHolder" position="3.89 2.10 -1.44">
             <a-curvedimage id="security" src="#security"
                 height="3.0"
                 radius="1.0"
@@ -196,20 +196,12 @@
             </a-cylinder>
         </a-entity>
         
-                  
-        <!-- Floor -->
-        <a-entity id="floor" 
-            geometry="primitive: cylinder; height: .2; radius: 12"
-            material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
-        </a-entity>
-         
-        <!-- Door Model -->
+        <!-- 3D Imports -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
-            position="1.20 0.16 13.56">
+            position="1.20 0.16 12.30">
         </a-collada-model>
          
-        <!-- Server Model -->
         <a-collada-model id="cloudServer" src="#cloudServer"
             rotation="0.00 148.90 0.00"
             position="-7.34 0.89 -2.35">
@@ -218,31 +210,17 @@
             <!-- Disappear from user -->
             <a-animation begin="dissappear" attribute="position"></a-animation>
         </a-collada-model>
+
          
-        <!-- 
-            <a-animation attribute="position"
-				   from="0 70 -2180"
-				   to="0 1335 0"
-				   dur="10000"
-				   begin="5000"
-				   ease="linear"
-				   direction="alternate">
-				</a-animation>
-        -->
-        <!-- Elevator 
-        <a-curvedimage id="elevator" src="#elevator"
-            theta-length="360"
-            height="4"
-            position="-0.04 -2.00 5.00">
-        </a-curvedimage>
-        -->
-         
-         <!-- Sky -->
+        <!-- Sky -->
         <a-sky id="sky" color="white"></a-sky>
-         
-        <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
+        <!-- Floor -->
+        <a-entity id="floor" 
+            geometry="primitive: cylinder; height: .2; radius: 12"
+            material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
+        </a-entity>
         
-         <!-- Camera -->
+        <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.2 5">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
@@ -256,6 +234,8 @@
                 </a-entity>
             </a-entity>
        </a-entity>
+        <!-- Sound -->
+       <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
  
     </a-scene>
     <script src="js/aframe-editor.js"></script>
