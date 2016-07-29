@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor >
+     <a-scene editor>
          <!-- Asset management system -->
          <a-assets>
              <img id="floor" src="img/wood.jpg">
@@ -19,6 +19,8 @@
              <img id="cloud" src="img/cloud-icon.png">
              <img id="elevator" src="img/elevator.jpg">
              <a-asset-item id="door" src="models/door/model.dae"/>
+             <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
+             <a-asset-item id="cloudimage" src="models/cloudcompt/model/ucp_vmware_0.jpg"/>
              <!-- TODO: Fix audio -->
              <audio id="welcome" src="sounds/welcome.ogg"/>
          </a-assets>
@@ -112,8 +114,8 @@
          
         <!-- Enterprise/SMB Logos -->
          <!-- Cloud -->
-        <a-entity id="cloud" position="-6.93 2.10 1.26">
-            <a-curvedimage src="#cloud"
+        <a-entity id="cloudHolder" position="-6.93 2.10 1.26">
+            <a-curvedimage id="cloud" src="#cloud"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
@@ -133,8 +135,8 @@
         </a-entity>
         
          <!-- Internet -->
-        <a-entity id="internet" position="-3.89 2.10 -3.38">
-            <a-curvedimage src="#internet"
+        <a-entity id="internetHolder" position="-3.89 2.10 -3.38">
+            <a-curvedimage id="internet" src="#internet"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
@@ -155,8 +157,8 @@
         </a-entity>
         
          <!-- Security -->
-        <a-entity id="security" position="3.89 2.10 -3.38">
-            <a-curvedimage src="#security"
+        <a-entity id="securityHolder" position="3.89 2.10 -3.38">
+            <a-curvedimage id="security" src="#security"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
@@ -176,8 +178,8 @@
         </a-entity>
  
          <!-- Firewall -->
-        <a-entity id="firewall" position="6.93 2.10 1.26">
-            <a-curvedimage src="#firewall"
+        <a-entity id="firewallHolder" position="6.93 2.10 1.26">
+            <a-curvedimage id="firewall" src="#firewall"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
@@ -203,11 +205,18 @@
             material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
          
-        <!-- Door -->
+        <!-- Door Model -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
             position="1.20 0.16 13.56">
         </a-collada-model>
+         
+        <!-- Server Model -->
+        <a-collada-model id="cloudServer" src="#cloudServer"
+            rotation="0.00 148.88 0.00"
+            position="-7.34 0.89 -2.35">
+        </a-collada-model>
+         
          
         <!-- Elevator 
         <a-curvedimage id="elevator" src="#elevator"
@@ -216,6 +225,13 @@
             position="-0.04 -2.00 5.00">
         </a-curvedimage>
         -->
+    
+         <!-- Test Bubble -->
+        <a-entity id="test"
+            geometry="primitive: sphere"
+            position="-5.06 1.41 5.49"
+            material="color: blue">
+        </a-entity>
          
          <!-- Sky -->
         <a-sky id="sky" color="white"></a-sky>
@@ -227,36 +243,19 @@
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
-                    cursor="fuse: true; maxDistance: 300; timeout: 500"
+                    cursor="fuse: true; maxDistance: 800; timeout: 500"
                     position="0 0 -1"
                     geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
                     material="color: red; shader: flat; transparent: true; opacity: 0.6"
-                    scale="1.5 1.5 1.5">
-                    
-                    <!-- Visual Feedback for cursor 
-                    <a-animation begin="click" easing="ease-in" attribute="scale"
-                                 fill="backwards" from="2.1 2.1 2.1" to="1 1 1" dur="150">
-                    </a-animation>
-                    <a-animation begin="fusing" easing="ease-in" attribute="scale"
-                                fill="forwards" from="1 1 1" to="2.1 2.1 2.1" dur="1500x">
-                    </a-animation>
-                    -->
-                    
+                    scale="1.5 1.5 1.5"
+                    raycaster>
                 </a-entity>
             </a-entity>
        </a-entity>
-       <!-- 
-        <a-entity camera position="-0.04 1.20 5.00">
-            <a-entity cursor="maxDistance: 30; timeout: 500"
-                      position="-0.04 1.20 5.00"
-                      geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
-                      material="color: black; shader: flat; opacity: 0.6"
-                      scale="1.50 1.50 1.50">
-            </a-entity>
-        </a-entity>
-      -->
+ 
     </a-scene>
     <script src="js/aframe-editor.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
   </body>
 </html> 
