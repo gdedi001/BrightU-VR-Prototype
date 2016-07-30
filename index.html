@@ -112,7 +112,7 @@
          
         <!-- Enterprise/SMB Logos -->
          <!-- Internet -->
-        <a-entity id="internetHolder" position="-6.24 2.10 2.09">
+        <a-entity id="internetHolder" position="-6.24 2.10 2.79" rotation="0.00 22.12 0.00">
             <a-curvedimage id="internetIcon" src="#internet"
                 height="3.0"
                 radius="1.0"
@@ -120,7 +120,7 @@
                 theta-length="145"
                 rotation="0.00 -17.32 1.60"
                 position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.42">
+                scale="1.58 1.02 1.70">
             </a-curvedimage> 
             <!-- Shadow -->
             <a-cylinder id="internetShadow" 
@@ -142,7 +142,7 @@
                 theta-length="145"
                 rotation="0.00 -35.88 0.00"
                 position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.42">
+                scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
             <a-cylinder id="cloudShadow" 
@@ -164,7 +164,7 @@
                 theta-length="145"
                 rotation="0.00 -95.88 0.00"
                 position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.42">
+                scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
             <a-cylinder id="secShadow" 
@@ -178,7 +178,7 @@
         </a-entity>
  
          <!-- Firewall -->
-        <a-entity id="firewallHolder" position="6.24 2.10 2.09">
+        <a-entity id="firewallHolder" position="6.24 2.10 2.79" rotation="0.00 -16.85 0.00">
             <a-curvedimage id="firewallIcon" src="#firewall"
                 height="3.0"
                 radius="1.0"
@@ -186,7 +186,7 @@
                 theta-length="145"
                 rotation="0.00 -138.82 0.00"
                 position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.42">
+                scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
             <a-cylinder id="fireShadow" 
@@ -209,7 +209,10 @@
             rotation="0.00 148.90 0.00"
             position="-7.34 0.50 -2.35">
             <!-- Move towards user TODO: check if alterante direction would be better -->
-            <a-animation id="pull" attribute="position" from="-7.34 0.50 -2.35" to="-2.60 0.50 1.40" begin="test" direction="normal" ease="linear" duration="3000"></a-animation>
+            <a-animation id="yoyo" attribute="position" 
+                         from="-7.34 0.50 -2.35" to="-2.60 0.50 1.40" 
+                         begin="move" direction="normal" ease="linear" duration="3000">
+            </a-animation>
             <!-- Disappear from user -->
             <a-animation begin="dissappear" attribute="position"></a-animation>
         </a-collada-model>
