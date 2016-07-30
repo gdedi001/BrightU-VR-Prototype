@@ -13,7 +13,7 @@ var brightHouse = document.querySelector("#brightHouse"),
 
 // Trigger Cloud Server model to appear
 cloud.addEventListener('click', function(){
-    document.querySelector('#pull').emit('test');
+    document.querySelector('#yoyo').emit('move');
     console.log('testing!');
 });
 
