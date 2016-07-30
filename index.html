@@ -111,18 +111,19 @@
         </a-curvedimage> 
          
         <!-- Enterprise/SMB Logos -->
-         <!-- Cloud -->
-        <a-entity id="cloudHolder" position="-6.93 2.10 1.26">
-            <a-curvedimage id="cloud" src="#cloud"
+         <!-- Internet -->
+        <a-entity id="internetHolder" position="-6.24 2.10 2.09">
+            <a-curvedimage id="internetIcon" src="#internet"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -17.32 1.60"
+                position="0.00 -0.16 0.00"
                 scale="1.58 1.02 1.42">
             </a-curvedimage> 
             <!-- Shadow -->
-            <a-cylinder id="cloudShadow" 
+            <a-cylinder id="internetShadow" 
                 width="4.5" 
                 height="0.00"
                 radius="1.00"
@@ -132,19 +133,19 @@
             </a-cylinder>
         </a-entity>
         
-         <!-- Internet -->
-        <a-entity id="internetHolder" position="-3.89 2.10 -1.44">
-            <a-curvedimage id="internet" src="#internet"
+         <!-- Cloud -->
+        <a-entity id="cloudHolder" position="-3.89 2.10 -1.44">
+            <a-curvedimage id="cloudIcon" src="#cloud"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -35.88 0.00"
-                scale="1.58 1.02 1.42"
-                openEnded="false">
+                position="0.00 -0.16 0.00"
+                scale="1.58 1.02 1.42">
             </a-curvedimage>
             <!-- Shadow -->
-            <a-cylinder id="internetShadow" 
+            <a-cylinder id="cloudShadow" 
                 width="4.5" 
                 height="0.00"
                 radius="1.00"
@@ -156,12 +157,13 @@
         
          <!-- Security -->
         <a-entity id="securityHolder" position="3.89 2.10 -1.44">
-            <a-curvedimage id="security" src="#security"
+            <a-curvedimage id="securityIcon" src="#security"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -95.88 0.00"
+                position="0.00 -0.16 0.00"
                 scale="1.58 1.02 1.42">
             </a-curvedimage>
             <!-- Shadow -->
@@ -176,13 +178,14 @@
         </a-entity>
  
          <!-- Firewall -->
-        <a-entity id="firewallHolder" position="6.93 2.10 1.26">
-            <a-curvedimage id="firewall" src="#firewall"
+        <a-entity id="firewallHolder" position="6.24 2.10 2.09">
+            <a-curvedimage id="firewallIcon" src="#firewall"
                 height="3.0"
                 radius="1.0"
                 theta-start="180"
                 theta-length="145"
                 rotation="0.00 -138.82 0.00"
+                position="0.00 -0.16 0.00"
                 scale="1.58 1.02 1.42">
             </a-curvedimage>
             <!-- Shadow -->
@@ -199,7 +202,7 @@
         <!-- 3D Imports -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
-            position="1.20 0.16 12.30">
+            position="1.20 0.16 14.30">
         </a-collada-model>
          
         <a-collada-model id="cloudServer" src="#cloudServer"
