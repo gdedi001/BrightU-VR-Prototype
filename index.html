@@ -204,9 +204,9 @@
          
         <a-collada-model id="cloudServer" src="#cloudServer"
             rotation="0.00 148.90 0.00"
-            position="-7.34 0.89 -2.35">
+            position="-7.34 0.50 -2.35">
             <!-- Move towards user TODO: check if alterante direction would be better -->
-            <a-animation id="pull" attribute="position" from="-7.34 0.89 -2.35" to="-2.60 0.89 1.40" begin="test" direction="normal" ease="linear" duration="3000"></a-animation>
+            <a-animation id="pull" attribute="position" from="-7.34 0.50 -2.35" to="-2.60 0.50 1.40" begin="test" direction="normal" ease="linear" duration="3000"></a-animation>
             <!-- Disappear from user -->
             <a-animation begin="dissappear" attribute="position"></a-animation>
         </a-collada-model>
@@ -225,11 +225,11 @@
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
-                    cursor="fuse: true; maxDistance: 800; timeout: 500"
-                    position="0 0 -1"
-                    geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
-                    material="color: red; shader: flat; transparent: true; opacity: 0.6"
-                    scale="1.5 1.5 1.5"
+                    cursor="fuse: true; maxDistance: 800; timeout: 800"
+                    position="0 0 -2"
+                    geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
+                    material="color: grey; shader: flat; transparent: true; opacity: 0.9"
+                    scale="3.5 3.5 1.5"
                     raycaster>
                 </a-entity>
             </a-entity>
