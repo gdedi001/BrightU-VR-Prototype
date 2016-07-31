@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor>
+     <a-scene editor >
          <!-- Asset management system -->
          <a-assets>
              <img id="floor" src="img/wood.jpg">
@@ -17,6 +17,7 @@
              <img id="firewall" src="img/fire-icon.png">
              <img id="cloud" src="img/cloud-icon.png">
              <img id="elevator" src="img/elevator.jpg">
+             <img id="cloudInfo" src="img/Text_Cloud.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
              <!-- TODO: Fix audio -->
@@ -199,23 +200,34 @@
             </a-cylinder>
         </a-entity>
         
-        <!-- 3D Imports -->
+        <a-entity id="cloudFull" position="-4.55 0.50 -5.91">
+            <!-- animation for entire cloud model -->
+            <a-animation id="cloud-yoyo" attribute="position" 
+                 from="-4.55 0.50 -5.91" to="-0.64 0.50 0.55" 
+                 begin="yoyo" direction="alternate" ease="linear" dur="2000">
+            </a-animation>
+            <!-- Cloud Server model -->
+            <a-collada-model id="cloudServer" src="#cloudServer" rotation="0.00 126.46 0.00"></a-collada-model>
+            <!-- Text Description -->
+            <a-curvedimage id="cloudText" src="#cloudInfo"
+                material="opacity: .00;"
+                theta-start="154.00"
+                theta-length="70.00"
+                position="0.00 1.00 2.00"
+                scale="0.98 1.90 0.14">
+                <a-animation id="cloudTextFade" attribute="material.opacity" 
+                             from="0.00" to="1.00" 
+                             begin="fade" direction="alternate" dur="5000">
+                </a-animation>
+            </a-curvedimage>
+        </a-entity>
+         
+        <!-- 3D Door -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
             position="1.20 0.16 14.30">
         </a-collada-model>
          
-        <a-collada-model id="cloudServer" src="#cloudServer"
-            rotation="0.00 148.90 0.00"
-            position="-7.34 0.50 -2.35">
-            <!-- Move towards user TODO: check if alterante direction would be better -->
-            <a-animation id="yoyo" attribute="position" 
-                         from="-7.34 0.50 -2.35" to="-2.60 0.50 1.40" 
-                         begin="move" direction="normal" ease="linear" duration="3000">
-            </a-animation>
-            <!-- Disappear from user -->
-            <a-animation begin="dissappear" attribute="position"></a-animation>
-        </a-collada-model>
 
          
         <!-- Sky -->
@@ -227,7 +239,7 @@
         </a-entity>
         
         <!-- Camera -->
-        <a-entity id="cameraWrapper" position="-0.04 1.2 5">
+        <a-entity id="cameraWrapper" position="-0.04 1.00 5.00">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
