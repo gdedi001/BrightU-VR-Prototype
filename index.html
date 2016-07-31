@@ -203,7 +203,7 @@
         <a-entity id="cloudFull" position="-4.65 0.50 -5.91">
             <!-- animation for entire cloud model -->
             <a-animation id="cloud-yoyo" attribute="position" 
-                 from="-4.55 0.50 -5.91" to="-0.64 0.50 0.55" 
+                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.55" 
                  begin="yoyo" direction="alternate" ease="linear" dur="2000">
             </a-animation>
             <!-- Cloud Server model -->
@@ -214,13 +214,18 @@
                 theta-length="70.00"
                 rotation="0.00 7.10 0.00"
                 position="0.59 0.80 2.30"
-                scale="0.92 0.80 0.04"
-                material="opacity: .00;">
+                scale="0.92 0.80 0.04">
                 <a-animation id="cloudTextFade" attribute="material.opacity" 
                     from="0.00" to="1.00" 
-                    begin="fade" direction="alternate" dur="5000">
+                    begin="fade" direction="alternate" dur="3000">
                 </a-animation>
             </a-curvedimage>
+            <!-- EXIT icon -->
+            <a-entity id="exit"
+                geometry="primitive: circle; radius: .07"
+                position="1.33 1.15 2.16"
+                material="color: red; opacity: 0.70">
+            </a-entity>
         </a-entity>
          
         <!-- 3D Door -->
