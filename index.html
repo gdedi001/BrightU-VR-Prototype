@@ -16,8 +16,9 @@
              <img id="security" src="img/securityartwork.png">
              <img id="firewall" src="img/fire-icon.png">
              <img id="cloud" src="img/cloud-icon.png">
-             <img id="elevator" src="img/elevator.jpg">
+             <img id="elevator" src="img/blackbackground.jpg">
              <img id="cloudInfo" src="img/Text_Cloud.png">
+             
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
              <!-- TODO: Fix audio -->
@@ -235,6 +236,14 @@
         </a-collada-model>
          
 
+        <!-- Elevator -->
+        <a-entity id="elevatorFull" position="0.00 1.30 4.90">
+            <a-curvedimage id="elevatorRoom" src="#elevator"
+                    scale="1.20 2.30 1.20"
+                    theta-length="360.00">
+            </a-curvedimage>
+            <a-cylinder color="black" position="0.00 1.76 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+        </a-entity>
          
         <!-- Sky -->
         <a-sky id="sky" color="white"></a-sky>
@@ -243,6 +252,7 @@
             geometry="primitive: cylinder; height: .2; radius: 12"
             material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
+         
         
         <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.00 5.00">
@@ -252,7 +262,7 @@
                     cursor="fuse: true; maxDistance: 800; timeout: 850"
                     position="0 0 -2"
                     geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
-                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.8"
+                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.55"
                     scale="3.5 3.5 1.5"
                     raycaster>
                 </a-entity>
