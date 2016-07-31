@@ -200,7 +200,7 @@
             </a-cylinder>
         </a-entity>
         
-        <a-entity id="cloudFull" position="-4.55 0.50 -5.91">
+        <a-entity id="cloudFull" position="-4.65 0.50 -5.91">
             <!-- animation for entire cloud model -->
             <a-animation id="cloud-yoyo" attribute="position" 
                  from="-4.55 0.50 -5.91" to="-0.64 0.50 0.55" 
@@ -210,14 +210,15 @@
             <a-collada-model id="cloudServer" src="#cloudServer" rotation="0.00 126.46 0.00"></a-collada-model>
             <!-- Text Description -->
             <a-curvedimage id="cloudText" src="#cloudInfo"
-                material="opacity: .00;"
                 theta-start="154.00"
                 theta-length="70.00"
-                position="0.00 1.00 2.00"
-                scale="0.98 1.90 0.14">
+                rotation="0.00 7.10 0.00"
+                position="0.59 0.80 2.30"
+                scale="0.92 0.80 0.04"
+                material="opacity: .00;">
                 <a-animation id="cloudTextFade" attribute="material.opacity" 
-                             from="0.00" to="1.00" 
-                             begin="fade" direction="alternate" dur="5000">
+                    from="0.00" to="1.00" 
+                    begin="fade" direction="alternate" dur="5000">
                 </a-animation>
             </a-curvedimage>
         </a-entity>
@@ -246,7 +247,7 @@
                     cursor="fuse: true; maxDistance: 800; timeout: 800"
                     position="0 0 -2"
                     geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
-                    material="color: grey; shader: flat; transparent: true; opacity: 0.9"
+                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.9"
                     scale="3.5 3.5 1.5"
                     raycaster>
                 </a-entity>
