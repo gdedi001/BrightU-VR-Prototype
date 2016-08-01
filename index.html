@@ -7,9 +7,10 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor >
+     <a-scene editor stats>
          <!-- Asset management system -->
          <a-assets>
+             <img id="BHNlogo" src="img/BHNflat.png">
              <img id="floor" src="img/wood.jpg">
              <img id="brightU" src="img/BrightU_Logo.png">
              <img id="internet" src="img/internet.png">
@@ -18,7 +19,6 @@
              <img id="cloud" src="img/cloud-icon.png">
              <img id="elevator" src="img/blackbackground.jpg">
              <img id="cloudInfo" src="img/Text_Cloud.png">
-             
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
              <!-- TODO: Fix audio -->
@@ -238,11 +238,28 @@
 
         <!-- Elevator -->
         <a-entity id="elevatorFull" position="0.00 1.30 4.90">
+            <!-- Environment picture -->
             <a-curvedimage id="elevatorRoom" src="#elevator"
-                    scale="1.20 2.30 1.20"
+                    position="0.00 0.30 0.00"
+                    scale="1.20 2.92 1.20"
                     theta-length="360.00">
             </a-curvedimage>
-            <a-cylinder color="black" position="0.00 1.76 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+            <a-cylinder id="elevatorCeiling" color="black" position="0.00 1.76 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+            <a-cylinder id="elevatorFloor" color="black" position="0.00 -1.18 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+            <!-- Power Button -->
+            <a-curvedimage id="bhnPower" src="#BHNlogo"
+                    theta-start="160.52"
+                    theta-length="40.00"
+                    rotation="-16.16 0.00 0.00"
+                    position="0.00 -0.32 0.00"
+                    scale="0.30 0.38 1.16">
+            </a-curvedimage>
+            
+            <!-- Elevator 'Descent' animation -->
+            <a-animation id="cloud-yoyo" attribute="position" 
+                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.45" 
+                 begin="yoyo" direction="alternate" ease="linear" dur="3000">
+            </a-animation>
         </a-entity>
          
         <!-- Sky -->
