@@ -4,7 +4,8 @@ var brightHouse = document.querySelector("#brightHouse"),
     internet = document.querySelector("#internetHolder"),
     security = document.querySelector("#securityHolder"),
     firewall = document.querySelector("#firewallHolder"),
-    cloudExit = document.querySelector("#exit");
+    cloudExit = document.querySelector("#exit"),
+    powerStart = document.querySelector("#bhnPower");
 
 
 function cloudActivate(){
@@ -17,3 +18,6 @@ function cloudActivate(){
 cloud.addEventListener('click', cloudActivate);
 cloudExit.addEventListener('click', cloudActivate);
 
+powerStart.addEventListener('click', function(){
+    console.log('power test');
+});
