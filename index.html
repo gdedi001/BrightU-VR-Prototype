@@ -21,7 +21,7 @@
              <img id="cloudInfo" src="img/Text_Cloud.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
-             <audio id="welcome" src="sounds/welcome.mp3"/>
+<!--             <audio id="welcome" src="sounds/welcome.mp3"/>-->
          </a-assets>
                   
          
@@ -237,6 +237,12 @@
 
         <!-- Elevator -->
         <a-entity id="elevatorFull" position="0.00 1.30 4.90">
+            <!-- Elevator 'Descent' animation -->
+            <a-animation id="elevator-descent" attribute="position" 
+                 to="0.00 -1.81 4.90" begin="descent" 
+                 direction="normal" ease="linear" dur="9000">
+            </a-animation>
+            
             <!-- Environment picture -->
             <a-curvedimage id="elevatorRoom" src="#elevator"
                     position="0.00 0.30 0.00"
@@ -253,12 +259,6 @@
                     position="0.00 -0.32 0.00"
                     scale="0.30 0.38 1.16">
             </a-curvedimage>
-            
-            <!-- Elevator 'Descent' animation -->
-            <a-animation id="elevator-descent" attribute="position" 
-                 to="-0.64 0.50 0.45" begin="descent" 
-                 direction="alternate" ease="linear" dur="3000">
-            </a-animation>
         </a-entity>
          
         <!-- Sky -->
@@ -275,7 +275,7 @@
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
-                    cursor="fuse: true; maxDistance: 800; timeout: 850"
+                    cursor="fuse: true; maxDistance: 800; timeout: 1050"
                     position="0 0 -2"
                     geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
                     material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.55"
@@ -283,10 +283,13 @@
                     raycaster>
                 </a-entity>
             </a-entity>
-       </a-entity>
-        <!-- Sound -->
-       <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
- 
+        </a-entity>
+         
+        <!-- Additional Animations --> 
+        <a-entity id="elevator-scan"></a-entity> 
+         
+        <!-- Welcome to BHN -->
+       <a-entity sound="src: sounds/welcome.mp3; volume: 25"></a-entity>
     </a-scene>
     <script src="js/aframe-editor.js"></script>
     <script src="js/app.js"></script>
