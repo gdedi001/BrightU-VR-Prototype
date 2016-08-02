@@ -21,8 +21,7 @@
              <img id="cloudInfo" src="img/Text_Cloud.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
-             <!-- TODO: Fix audio -->
-             <audio id="welcome" src="sounds/welcome.ogg"/>
+             <audio id="welcome" src="sounds/welcome.mp3"/>
          </a-assets>
                   
          
@@ -256,9 +255,9 @@
             </a-curvedimage>
             
             <!-- Elevator 'Descent' animation -->
-            <a-animation id="cloud-yoyo" attribute="position" 
-                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.45" 
-                 begin="yoyo" direction="alternate" ease="linear" dur="3000">
+            <a-animation id="elevator-descent" attribute="position" 
+                 to="-0.64 0.50 0.45" begin="descent" 
+                 direction="alternate" ease="linear" dur="3000">
             </a-animation>
         </a-entity>
          
