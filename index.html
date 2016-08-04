@@ -267,8 +267,12 @@
         <a-sky id="sky" color="white"></a-sky>
          
         <!-- Charter Logo -->
-        <a-curvedimage id="charter" src="#charterLogo">
-         
+        <a-curvedimage id="charter" src="#charterLogo"
+                    theta-start="49.12"
+                    theta-length="49.32"
+                    rotation="-13.04 90.00 92.58"
+                    position="-1.00 19.64 5.06"
+                    scale="0.94 1.94 2.94">
         </a-curvedimage>
          
         <!-- Clouds (mid1, mid2, far) -->
@@ -277,7 +281,7 @@
                scale="3.10 1.24 3.48"
                opacity="0.25">
             <a-animation attribute="position"
-                    dur="15000"
+                    dur="30000"
                     repeat="indefinite"
                     easing="linear"
                     from="-15.55 13.93 0.00"

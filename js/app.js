@@ -8,6 +8,7 @@ var brightHouse = document.querySelector("#brightHouse"),
     powerStart = document.querySelector("#bhnPower");
 
 
+
 function cloudActivate(){
     document.querySelector('#cloud-yoyo').emit('yoyo');
     document.querySelector('#cloudTextFade').emit('fade');
@@ -19,5 +20,10 @@ cloud.addEventListener('click', cloudActivate);
 cloudExit.addEventListener('click', cloudActivate);
 
 powerStart.addEventListener('click', function(){
-    console.log('power test');
+    document.querySelector('#elevator-scan').emit('scan');
+    setTimeout(function(){
+       document.querySelector('#elevator-descent').emit('descent');
+    }, 5000);
 });
+
+//sound="src: sounds/welcome.mp3; on: click; autoplay: false"
