@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor stats>
+     <a-scene editor>
          <!-- Asset management system -->
          <a-assets>
              <img id="BHNlogo" src="img/BHNflat.png">
@@ -18,10 +18,11 @@
              <img id="firewall" src="img/fire-icon.png">
              <img id="cloud" src="img/cloud-icon.png">
              <img id="elevator" src="img/blackbackground.jpg">
-             <img id="cloudInfo" src="img/Text_Cloud.png">
+             <img id="cloudInfo" src="img/felton-cloud.png">
+             <img id="charterLogo" src="img/charter-logo.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
-<!--             <audio id="welcome" src="sounds/welcome.mp3"/>-->
+             <audio id="welcome" src="sounds/welcome.mp3"/>
          </a-assets>
                   
          
@@ -257,12 +258,58 @@
                     theta-length="40.00"
                     rotation="-16.16 0.00 0.00"
                     position="0.00 -0.32 0.00"
-                    scale="0.30 0.38 1.16">
+                    scale="0.30 0.38 1.16"
+                    sound="src: sounds/welcome.mp3; volume: 2; on: click">
             </a-curvedimage>
         </a-entity>
          
         <!-- Sky -->
         <a-sky id="sky" color="white"></a-sky>
+         
+        <!-- Charter Logo -->
+        <a-curvedimage id="charter" src="#charterLogo">
+         
+        </a-curvedimage>
+         
+        <!-- Clouds (mid1, mid2, far) -->
+        <a-box id="cloud-mid1" color="grey" 
+               position="-15.55 13.93 0.00"
+               scale="3.10 1.24 3.48"
+               opacity="0.25">
+            <a-animation attribute="position"
+                    dur="15000"
+                    repeat="indefinite"
+                    easing="linear"
+                    from="-15.55 13.93 0.00"
+                    to="-7.20 10.93 -22.32"
+                    direction="alternate">
+            </a-animation>
+        </a-box> 
+        <a-box id="cloud-mid2" color="grey" 
+               position="13.03 10.93 7.00"
+               scale="3.10 1.24 5.48"
+               opacity="0.35">
+            <a-animation attribute="position"
+                    dur="29000"
+                    repeat="both"
+                    easing="linear"
+                    from="13.03 10.93 7.00"
+                    to="13.03 10.93 -24.84">
+            </a-animation>
+        </a-box>
+        <a-box id="cloud-far" color="grey" 
+               position="-0.81 17.93 -11.49" 
+               scale="3.10 1.24 5.48"
+               opacity="0.20">
+            <a-animation attribute="position"
+                    dur="40000"
+                    repeat="indefinite"
+                    easing="linear"
+                    from="-0.81 17.93 -11.49"
+                    to="-0.81 17.93 17.40"
+                    direction="alternate">
+            </a-animation>
+        </a-box> 
         <!-- Floor -->
         <a-entity id="floor" 
             geometry="primitive: cylinder; height: .2; radius: 12"
@@ -286,10 +333,12 @@
         </a-entity>
          
         <!-- Additional Animations --> 
-        <a-entity id="elevator-scan"></a-entity> 
-         
-        <!-- Welcome to BHN -->
-       <a-entity sound="src: sounds/welcome.mp3; volume: 25"></a-entity>
+        <a-torus id="scanner" position="0.00 0.09 5.00" color="#FFB300" radius="2.30" radius-tubular="0.01" rotation="90.00 0.00 0.00">
+            <a-animation id="elevator-scan" attribute="position"
+                    from="0.00 0.04 5.00" to="0.00 3.05 5.00" begin="scan"
+                    direction="alternate" ease="linear" dur="3500" repeat="1">
+            </a-animation> 
+        </a-torus> 
     </a-scene>
     <script src="js/aframe-editor.js"></script>
     <script src="js/app.js"></script>
