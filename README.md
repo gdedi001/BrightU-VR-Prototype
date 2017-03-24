@@ -1,5 +1,5 @@
 <h1 align="center">Bright-U (WebVR Prototype)</h1>
-![](/Screenshots/rotation.gif?raw=true "Entry Point")
+![](/Screenshots/rotation.gif?raw=true "Entry")
 
 ## Statement of Purpose
 BrightU 2.0 is a mobile VR application which helps the salesmen learn about _sticky products_ in an interactive fashion by showing them relevant information in new ways.
@@ -9,7 +9,8 @@ For the duration of my internship, my team and I were tasked with identifying a 
 
 
 ## Usage
-The application begins by placing the user in a **staging area**, allowing them to get comforable with their HMD before they are made available to the rest of the enviroment. Looking down towards the _Bright House_ logo will initialize the experience. Once in the environemnt, staring at each product produces an animation along with relevant information. The screenshot below depicts what the user will see when interacting with the environment
+The application begins by placing the user in a **staging area**, allowing them to get comforable with their HMD before they are made available to the rest of the enviroment. Looking down towards the _Bright House_ logo will initialize the experience. Once in the environemnt, staring at each product produces an animation along with relevant information. The screenshot below depicts what the user will see when interacting with the environment.
+
 **Due to time constraints the only working product is Cloud Solutions**
 
 ![](/Screenshots/server.PNG?raw=true "Cloud Information")
