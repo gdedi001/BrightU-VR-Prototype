@@ -1,5 +1,5 @@
 <h1 align="center">Bright-U (WebVR Prototype)</h1>
-![](/Screenshots/rotation.gif)
+![](https://github.com/gdedi001/BrightU-VR-Prototype/blob/master/Screenshots/rotation.gif)
 
 ## Statement of Purpose
 BrightU 2.0 is a mobile VR application which helps the salesmen learn about _sticky products_ in an interactive fashion by showing them relevant information in new ways.
