@@ -1,7 +1,7 @@
 <h1 align="center">Bright-U (WebVR Prototype)</h1>
 
 ## Statement of Purpose
-BrightU 2.0 is a mobile VR application which helps the salesmen learn about _sticky products_ in an interactive fashion by showing them relevant information in new ways.
+BrightU 2.0 is a mobile VR application which helps salesmen learn about sticky products in an interactive fashion by showing them relevant information in new ways.
 
 ## Description
 For the duration of my internship, my team and I were tasked with identifying a problem-solution with respect to the **Small-Medium/Enterprise Sales** section of Bright House Networks. Through internal interview sessions with managers we discovered that a large problem lay within the sales team itself. In terms of selling _sticky products_, our salesmen oftentimes did not have the in-depth knowledge on how to properly capitalize on the _"sticky"_ nature of the products. After much research and industry analysis, we agreed that implementing a Virtual Reality learning environment would be the best solution to maximize the comprehension of seemingly complex information. 
